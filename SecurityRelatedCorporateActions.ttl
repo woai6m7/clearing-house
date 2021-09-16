@@ -1,0 +1,1543 @@
+# baseURI: https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/SecurityRelatedCorporateActions/
+# imports: http://www.omg.org/techprocess/ab/SpecificationMetadata/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditEvents/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/SecurityTradingStatuses/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/
+# imports: https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/
+# imports: https://www.omg.org/spec/LCC/Countries/CountryRepresentation/
+# imports: https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/
+
+@base <https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/SecurityRelatedCorporateActions/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fibo-be-le-lp: <https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/> .
+@prefix fibo-cae-ce-srca: <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> .
+@prefix fibo-fbc-dae-cre: <https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/> .
+@prefix fibo-fbc-fi-fi: <https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/> .
+@prefix fibo-fnd-acc-cur: <https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/> .
+@prefix fibo-fnd-arr-cls: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/> .
+@prefix fibo-fnd-arr-doc: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/> .
+@prefix fibo-fnd-arr-lif: <https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/> .
+@prefix fibo-fnd-dt-oc: <https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/> .
+@prefix fibo-fnd-law-lcap: <https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/> .
+@prefix fibo-fnd-rel-rel: <https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/> .
+@prefix fibo-fnd-utl-av: <https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/> .
+@prefix fibo-md-temx-trs: <https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/> .
+@prefix fibo-sec-dbt-bnd: <https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/> .
+@prefix fibo-sec-eq-eq: <https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/> .
+@prefix lcc-cr: <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .
+@prefix lcc-lr: <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sm: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/>
+	a owl:Ontology ;
+	rdfs:label "Security-related Corporate Actions Ontology"@en ;
+	dct:abstract "This ontology covers income and corporate action events as specified in SWIFT ISO 15022, including extensions as of 3 September 2020. Scope has been limited to security-related events and actions only, and excludes notification and meetings related events and message definitions associated with ISO 15022 as well as related messages covered by ISO 20022." ;
+	dct:license "http://opensource.org/licenses/MIT"^^xsd:anyURI ;
+	sm:contentLanguage <https://www.w3.org/TR/owl2-quick-reference/> ;
+	sm:copyright "Copyright (c) 2016-2020 EDM Council, Inc." ;
+	sm:dependsOn
+		"https://spec.edmcouncil.org/fibo/ontology/BE/"^^xsd:anyURI ,
+		"https://spec.edmcouncil.org/fibo/ontology/FBC/"^^xsd:anyURI ,
+		"https://spec.edmcouncil.org/fibo/ontology/FND/"^^xsd:anyURI ,
+		"https://spec.edmcouncil.org/fibo/ontology/SEC/"^^xsd:anyURI ,
+		"https://www.omg.org/spec/LCC/"^^xsd:anyURI
+		;
+	sm:fileAbbreviation "fibo-cae-ce-srca" ;
+	sm:filename "SecurityRelatedCorporateActions.rdf" ;
+	owl:imports
+		<http://www.omg.org/techprocess/ab/SpecificationMetadata/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditEvents/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/SecurityTradingStatuses/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/> ,
+		<https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/> ,
+		<https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> ,
+		<https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/>
+		;
+	owl:versionIRI <https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	fibo-fnd-utl-av:hasMaturityLevel fibo-fnd-utl-av:Provisional ;
+	.
+
+fibo-cae-ce-srca:BIDS
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "BIDS"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions in which an offer is made to existing shareholders by the issuing company to repurchase equity or other securities convertible into equity"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:RepurchaseOffer ;
+	lcc-lr:denotes fibo-cae-ce-srca:RepurchaseOffer ;
+	lcc-lr:hasTag "BIDS" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:BONU
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "BONU"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions in which security holders are awarded additional assets free of payment from the issuer in proportion to their holding"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:BonusIssue ;
+	lcc-lr:denotes fibo-cae-ce-srca:BonusIssue ;
+	lcc-lr:hasTag "BONU" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:BPUT
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "BPUT"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve early redemption of a security at the election of the holder subject to the terms and condition of the issue with no reduction in nominal value"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:PutRedemptionAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:PutRedemptionAction ;
+	lcc-lr:hasTag "BPUT" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:BondDefaultAction
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:MandatoryCorporateAction ,
+		fibo-fbc-dae-cre:ObligationDefault ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom fibo-sec-dbt-bnd:Bond ;
+		]
+		;
+	rdfs:label "bond default event"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action which indicates a failure by the issuer to perform obligations defined as default events under the bond agreement and that have not been remedied"@en ;
+	.
+
+fibo-cae-ce-srca:BonusIssue
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "bonus issue"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action in which security holders are awarded additional assets free of payment from the issuer in proportion to their holding"@en ;
+	fibo-fnd-utl-av:explanatoryNote "There are different taxation rules for the bonus issue compared to the dividend. There could also be a difference in the ranking of the shares that are given to what the holder already holds. Dividends are paid from current profits and bonus may be from accumulated reserves of the company. A scrip issue is the issue of new shares at no charge pro rata to the holder of existing shares."@en ;
+	fibo-fnd-utl-av:synonym
+		"capitalisation issue"@en ,
+		"scrip issue"@en
+		;
+	.
+
+fibo-cae-ce-srca:BonusRightsIssue
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:IntermediateSecuritiesDistribution ;
+	rdfs:label "bonus rights issue"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "A Rights Issue in which the rights are given to the holders of the referenced shares for free."@en ;
+	fibo-fnd-utl-av:explanatoryNote "Rights = right to buy shares at a specified price. May be given the right for nothing (Bonus Rights Issue) or you may be offered to purchase that right at a subscription price (which you take up or don't). Bonus Rights Issue: given the option for free. May exercise at the Exercise Price."@en ;
+	.
+
+fibo-cae-ce-srca:BonusSharePlanDistribution
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CapitalDistribution ;
+	rdfs:label "bonus share plan distribution"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Event in which shares are issued from the Share Premium Reserve of the company and are considered as a capital distribution rather than a disbursement of income, with different tax implications. SWIFT Definition (adapted above) \"Typically found in Australia, shares are issued from the Share Premium Reserve of the company and are considered as a capital distribution rather than a disbursement of income, with different tax implications.\" To be researches further. There are certainly Share Plans in Australia, where you can take a dividend as shares. Thewse would be in the nature of Bonus Shares. They are a tradeoff from cash dividends. Other terms to model: A \"Scheme of Arrangment\" - does this change the capital reserves or is it just another word for restructure. An arrangement with the company's debtors, and coule potentially change the capital base by converting the debt to shares (see other diagram note with these in)."@en ;
+	.
+
+fibo-cae-ce-srca:BusinessStrategyOrientedAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateActionClassifier ;
+	rdfs:label "business strategy oriented action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "classifier of corporate actions that involves improving liquidity or changing the overall structure of the organization through diversification, combining and closing parts of the business, etc, to increase long-term profitability"@en ;
+	.
+
+fibo-cae-ce-srca:CAPD
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "CAPD"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that pay shareholders an amount in cash issued from the issuer's capital account"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:CapitalDistribution ;
+	lcc-lr:denotes fibo-cae-ce-srca:CapitalDistribution ;
+	lcc-lr:hasTag "CAPD" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:CAPG
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "CAPG"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that distribute profits resulting from the sale of company assets to shareholders"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:CapitalGainsDistribution ;
+	lcc-lr:denotes fibo-cae-ce-srca:CapitalGainsDistribution ;
+	lcc-lr:hasTag "CAPG" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:CHAN
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "CHAN"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that disseminate information regarding a change further described in the corporate action details"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:ChangeAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:ChangeAction ;
+	lcc-lr:hasTag "CHAN" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:CLSA
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "CLSA"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions involving a situation where interested parties seek restitution for financial loss"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:ClassAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:ClassAction ;
+	lcc-lr:hasTag "CLSA" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:CONS
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "CONS"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve procedures aiming to obtain consent of holder to a proposal by the issuer or a third party without convening a meeting"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:ConsentSolicitation ;
+	lcc-lr:denotes fibo-cae-ce-srca:ConsentSolicitation ;
+	lcc-lr:hasTag "CONS" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:CONV
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "CONV"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve conversion of securities (generally convertible bonds or preferred shares) into another form of securities (usually common shares) at a pre-stated price/ratio"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:ConversionAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:ConversionAction ;
+	lcc-lr:hasTag "CONV" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:CallOnIntermediateSecurities
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryWithChoiceCorporateAction ;
+	rdfs:label "call on intermediate securities"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves a call or exercise on nil paid securities or intermediate securities resulting from an intermediate securities distribution (RHDI)"@en ;
+	fibo-fnd-utl-av:explanatoryNote "This code is used for the second event, when an intermediate securities' issue (rights/coupons) is composed of two events, the first event being the distribution of intermediate securities."@en ;
+	.
+
+fibo-cae-ce-srca:CancellationOfShares
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "cancellation of shares"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "The cancellation of shares. Further Notes Only possible with shares not publicly issued i.e. treasury shares"@en ;
+	.
+
+fibo-cae-ce-srca:CapitalDistribution
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "capital distribution"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that pays shareholders an amount in cash issued from the issuer's capital account"@en ;
+	fibo-fnd-utl-av:explanatoryNote "This action does not result in a reduction of the face value of a share or in a change to the number of shares in circulation."@en ;
+	.
+
+fibo-cae-ce-srca:CapitalGainsDistribution
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "capital gains distribution"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that distributes profits resulting from the sale of company assets to shareholders"@en ;
+	skos:example "Shareholders of Mutual Funds, Unit Trusts, or SICAVs are recipients of capital gains distributions which are often reinvested in additional shares of the fund"@en ;
+	.
+
+fibo-cae-ce-srca:CashDividendAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "cash dividend action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that distributes cash to shareholders in proportion to their equity holding"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Ordinary dividends are typically recurring and regular.  The shareholder must take cash, and may be offered a choice of currency."@en ;
+	.
+
+fibo-cae-ce-srca:ChangeAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "change action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action to disseminate information regarding a change further described in the corporate action details"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Generic changes may include a change in the terms of an issue, change in the identification of a security, change of board lot, change from global to definitive, etc."@en ;
+	.
+
+fibo-cae-ce-srca:ChangeOfSecurityTradingStatusEvent
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:CorporateChangeOfStatusEvent ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom fibo-md-temx-trs:SecurityTradingStatus ;
+		]
+		;
+	rdfs:label "change of security trading status event"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "An event in which the trading status of a tradable security changes."@en ;
+	.
+
+fibo-cae-ce-srca:ChangeToSmallestNegotiableUnit
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "change to smallest negotiable unit"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Modification of the smallest negotiable unit of shares in order to obtain a new negotiable unit. SWIFT:SMAL"@en ;
+	.
+
+fibo-cae-ce-srca:ClassAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "class action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving a situation where interested parties seek restitution for financial loss"@en ;
+	fibo-fnd-utl-av:explanatoryNote "The security holder may be offered the opportunity to join a class action proceeding and would need to respond with an instruction."@en ;
+	fibo-fnd-utl-av:synonym "proposed settlement"@en ;
+	.
+
+fibo-cae-ce-srca:ConsentSolicitation
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "consent solicitation"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that is a procedure that aims to obtain consent of holder to a proposal by the issuer or a third party without convening a meeting"@en ;
+	skos:example "For example, consent to change the terms of a bond."@en ;
+	.
+
+fibo-cae-ce-srca:ConversionAction
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:VoluntaryCorporateAction ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-cae-ce-srca:convertsFrom ;
+			owl:someValuesFrom fibo-fbc-fi-fi:Security ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-cae-ce-srca:convertsTo ;
+			owl:someValuesFrom fibo-fbc-fi-fi:Security ;
+		]
+		;
+	rdfs:label "conversion action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving conversion of securities (generally convertible bonds or preferred shares) into another form of securities (usually common shares) at a pre-stated price/ratio"@en ;
+	.
+
+fibo-cae-ce-srca:ConversionSuspensionAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "conversion suspension action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Suspensiion of conversion of securities generally a couple of weeks before a meeting takes place. SWIFT = SCOP"@en ;
+	.
+
+fibo-cae-ce-srca:CorporateAction
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-fnd-dt-oc:OccurrenceKind ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom [
+				a owl:Class ;
+				owl:unionOf (
+					fibo-be-le-lp:LegalEntity
+					fibo-fbc-fi-fi:Security
+				) ;
+			] ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty lcc-cr:isClassifiedBy ;
+			owl:someValuesFrom fibo-cae-ce-srca:CorporateActionClassifier ;
+		]
+		;
+	rdfs:label "corporate action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "event carried out by a legal entity that affects the securities it issues and may have a material impact on its stakeholders, such as shareholders and creditors"@en ;
+	skos:example "Examples of corporate actions include stock splits, dividends, mergers and acquisitions, rights issues, and spin-offs."@en ;
+	fibo-fnd-utl-av:explanatoryNote "Corporate actions are typically approved by a company's board of directors and authorized by the shareholders."@en ;
+	.
+
+fibo-cae-ce-srca:CorporateActionClassificationScheme
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-fnd-arr-cls:ClassificationScheme ,
+		lcc-lr:CodeSet ,
+		[
+			a owl:Restriction ;
+			owl:onProperty lcc-lr:hasMember ;
+			owl:allValuesFrom fibo-cae-ce-srca:CorporateActionClassifier ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:defines ;
+			owl:someValuesFrom fibo-cae-ce-srca:CorporateActionClassifier ;
+		]
+		;
+	rdfs:label "corporate action classification scheme" ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "scheme for classifying corporate actions" ;
+	fibo-fnd-utl-av:usageNote "The set of corporate actions and income events included herein are a subset of those specified in ISO 15022 Securities - Scheme for Messages (Data Field Dictionary). Other schemes that are specific to a custodian, depository, or regulatory agency may also be important, and should take a similar approach with respect to classification." ;
+	.
+
+fibo-cae-ce-srca:CorporateActionClassifier
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-fnd-arr-cls:Classifier ,
+		lcc-lr:CodeElement ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:isDefinedIn ;
+			owl:onClass fibo-cae-ce-srca:CorporateActionClassificationScheme ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty lcc-lr:isMemberOf ;
+			owl:onClass fibo-cae-ce-srca:CorporateActionClassificationScheme ;
+			owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty lcc-cr:classifies ;
+			owl:someValuesFrom fibo-cae-ce-srca:CorporateAction ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty lcc-lr:denotes ;
+			owl:someValuesFrom fibo-cae-ce-srca:CorporateAction ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty lcc-lr:hasTag ;
+			owl:someValuesFrom xsd:string ;
+		]
+		;
+	rdfs:label "corporate action classifier"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "classifier that distinguishes income-oriented events from other corporate actions"@en ;
+	fibo-fnd-utl-av:explanatoryNote "ISO 15022 classifies events as impacting income vs. others.  Other classification schemes distinguish between actions that return profits to shareholders, actions that are designed to influence the share price, and actions involving a change in structure to the issuer organization."@en ;
+	.
+
+fibo-cae-ce-srca:CorporateActionObligation
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:CorporateAction ,
+		fibo-fnd-law-lcap:Duty
+		;
+	rdfs:label "corporate action obligation"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "An obligation related to the holding of a Security."@en ;
+	fibo-fnd-utl-av:explanatoryNote "Delivery of a security. Not defining direction at this level of the model - one party may have an obligation to deliver security or to pay; other party may have an obligation to deliver or to pay. Or there may be just one."@en ;
+	.
+
+fibo-cae-ce-srca:CorporateActionPaymentObligation
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateActionObligation ;
+	rdfs:label "corporate action payment obligation"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	.
+
+fibo-cae-ce-srca:CorporateActionSecuritiesDeliveryObligation
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateActionObligation ;
+	rdfs:label "corporate action securities delivery obligation"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Some obligation to deliver some security in the thr context of corporate actions. All cash proceeds and security proceeds can be represented a s acontractual obligation. Where does that obligation arise? Usually in the Contract itself - but there may be other answers to this. Defines what has to be delivered. or paid. Entitlement meanwhile is a calculation based on the Contract."@en ;
+	.
+
+fibo-cae-ce-srca:CorporateChangeOfStatusEvent
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:CorporateAction ,
+		fibo-fnd-arr-lif:LifecycleEvent
+		;
+	rdfs:label "corporate change of status event"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Some change to the status of some security."@en ;
+	fibo-fnd-utl-av:explanatoryNote "This is generally described by a corporate event message. For example, change in trading status, listing status."@en ;
+	.
+
+fibo-cae-ce-srca:CorporateInformationAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "corporate information action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving information provided by the issuer having no accounting/financial impact on the holder"@en ;
+	.
+
+fibo-cae-ce-srca:CouponStrip
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:CorporateAction ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom fibo-sec-dbt-bnd:Bond ;
+		]
+		;
+	rdfs:label "coupon strip"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Coupon stripping is the process whereby interest coupons for future payment dates are separated from the security corpus that entitles the holder to the principal repayment."@en ;
+	.
+
+fibo-cae-ce-srca:DECR
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "DECR"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that reduce the face value of a share or the value of fund assets"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:DecreaseInValueAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:DecreaseInValueAction ;
+	lcc-lr:hasTag "DECR" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:DFLT
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "DFLT"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that indicate a failure by the issuer to perform obligations defined as default events under the bond agreement and that have not been remedied"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:BondDefaultAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:BondDefaultAction ;
+	lcc-lr:hasTag "DFLT" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:DRIP
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "DRIP"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve a dividend payment whereby holders can keep cash or have the cash reinvested into additional shares in the issuing company"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:DividendReinvestmentAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:DividendReinvestmentAction ;
+	lcc-lr:hasTag "DRIP" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:DSCL
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "DSCL"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve a requirement for holders or beneficial owners to disclose their name, location and holdings of any issue to the issuer"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:DisclosureAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:DisclosureAction ;
+	lcc-lr:hasTag "DSCL" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:DTCH
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "DTCH"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions involving parties wishing to acquire a security"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:DutchAuction ;
+	lcc-lr:denotes fibo-cae-ce-srca:DutchAuction ;
+	lcc-lr:hasTag "DTCH" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:DVCA
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "DVCA"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that distribute cash to shareholders in proportion to their equity holding"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:CashDividendAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:CashDividendAction ;
+	lcc-lr:hasTag "DVCA" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:DVOP
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "DVOP"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve distribution of a dividend to shareholders with a choice of benefit to receive"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:DividendOptionAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:DividendOptionAction ;
+	lcc-lr:hasTag "DVOP" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:DVSE
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "DVSE"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve distribution of a dividend to shareholders in the form of equities of the issuing corporation"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:StockDividendAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:StockDividendAction ;
+	lcc-lr:hasTag "DVSE" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:DecreaseInValueAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "decrease in value action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action resulting in a reduction of face value of a share or the value of fund assets"@en ;
+	fibo-fnd-utl-av:explanatoryNote "The number of circulating shares/units remains unchanged. This event may include a cash pay out to holders."@en ;
+	.
+
+fibo-cae-ce-srca:DisclosureAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "disclosure action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving a requirement for holders or beneficial owners to disclose their name, location and holdings of any issue to the issuer"@en ;
+	fibo-fnd-utl-av:explanatoryNote "This event only occurs with the characteristic VOLU, otherwise it is part of the SRD II."@en ;
+	.
+
+fibo-cae-ce-srca:DividendOptionAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryWithChoiceCorporateAction ;
+	rdfs:label "dividend option action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves distribution of a dividend to shareholders with a choice of benefit to receive"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Shareholders may choose to receive shares or cash. A dividend option action is distinguished from reinvestment (DRIP) as, like a cash dividend, the company creates new share capital in exchange for the dividend rather than investing the dividend in the market."@en ;
+	.
+
+fibo-cae-ce-srca:DividendReinvestmentAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryWithChoiceCorporateAction ;
+	rdfs:label "dividend reinvestment action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves a dividend payment whereby holders can keep cash or have the cash reinvested into additional shares in the issuing company"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Dividend reinvestment is distinguished from a cash dividend in that the issuer invests the dividend in the market rather than creating new share capital in exchange for the dividend."@en ;
+	.
+
+fibo-cae-ce-srca:Drawing
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "drawing"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Redemption in part before the scheduled final maturity date of a security."@en ;
+	fibo-fnd-utl-av:explanatoryNote "Notification in advance of this happening."@en ;
+	.
+
+fibo-cae-ce-srca:DutchAuction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "dutch auction"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action by a party wishing to acquire a security"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Holders of the security are invited to make an offer to sell, within a specific price range. The acquiring party will buy from the holder with lowest offer."@en ;
+	.
+
+fibo-cae-ce-srca:EXOF
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "EXOF"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that reflect an exchange of holdings for other securities and/or cash"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:ExchangeAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:ExchangeAction ;
+	lcc-lr:hasTag "EXOF" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:EXRI
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "EXRI"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve a call or exercise on nil paid securities or intermediate securities resulting from an intermediate securities distribution (RHDI)"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:CallOnIntermediateSecurities ;
+	lcc-lr:denotes fibo-cae-ce-srca:CallOnIntermediateSecurities ;
+	lcc-lr:hasTag "EXRI" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:EXTM
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "EXTM"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve prolonging the maturity date of a bond"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:MaturityExtension ;
+	lcc-lr:denotes fibo-cae-ce-srca:MaturityExtension ;
+	lcc-lr:hasTag "EXTM" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:EXWA
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "EXWA"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that offer holders the option to buy (call warrant) or to sell (put warrant) a specific amount of stock, cash, or commodity, at a predetermined price, during a predetermined period of time"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:WarrantExerciseAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:WarrantExerciseAction ;
+	lcc-lr:hasTag "EXWA" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:ExchangeAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "exchange action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that reflects an exchange of holdings for other securities and/or cash"@en ;
+	fibo-fnd-utl-av:explanatoryNote "The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example, 'exchange offer', 'capital reorganisation' or 'funds separation'."@en ;
+	.
+
+fibo-cae-ce-srca:FormalOffer
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "formal offer"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	owl:equivalentClass [
+		a owl:Class ;
+		owl:unionOf (
+			fibo-cae-ce-srca:DutchAuction
+			fibo-cae-ce-srca:ExchangeAction
+			fibo-cae-ce-srca:RepurchaseOffer
+			fibo-cae-ce-srca:TenderOffer
+		) ;
+	] ;
+	skos:definition "corporat action involving an offer to a holder, potential holder, or other intersted party, to enter into a trade which is or would be legally binding on the part of the party making the offer (the offeror)."@en ;
+	.
+
+fibo-cae-ce-srca:FullCallEarlyRedemptionAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "full call early redemption action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves redemption of an entire issue outstanding of securities prior to maturity"@en ;
+	skos:example "Examples securities that may be subject to a full call/early redemption include bonds, preferred equity, funds, that may be redeemed by the issuer or its agent before final maturity."@en ;
+	.
+
+fibo-cae-ce-srca:INFO
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "INFO"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions involving information provided by the issuer having no accounting/financial impact on the holder"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:CorporateInformationAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:CorporateInformationAction ;
+	lcc-lr:hasTag "INFO" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:INTR
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "INTR"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve distribution of a regular interest payment to holders of an interest-bearing asset"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:InterestPaymentAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:InterestPaymentAction ;
+	lcc-lr:hasTag "INTR" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:CorporateActionClassificationScheme
+		;
+	rdfs:label "ISO 15022 corporate action classification scheme" ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "scheme for classifying corporate actions according to ISO 15022 Securities - Scheme for Messages (Data Field Dictionary)" ;
+	.
+
+fibo-cae-ce-srca:IncomeOrientedAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateActionClassifier ;
+	rdfs:label "income-oriented action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "classifier of corporate actions that impacts income to shareholders"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Cash dividends are a classic example where a public company declares a dividend to be paid on each outstanding share. Bonus is another case where the shareholder is rewarded. In a stricter sense, the bonus issue should not impact the share price but in reality, in rare cases, it does and results in an overall increase in value."@en ;
+	.
+
+fibo-cae-ce-srca:InterestPaymentAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "interest payment action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves distribution of a regular interest payment to holders of an interest-bearing asset"@en ;
+	skos:editorialNote "Further notes: Are there options on the Holder? Yes, you can opt to be paid in a certain currency. It is not always defined in the security terms. So if the Terms in the Security terms sheet gives you an option, there is a choice for the Holder at this point. Such choices would include: - Currency - Pay in Kind (\"Spinoff\" or PiK - see PiK corporate Action) Could be mandatory. If there were an option then the letter announcing it would require a response. This is usually stated in the message. Is there a message even if there is no option? Yes. Usually have to generate the events artificially as the Servicing organization. you can't rely on a feed or message coming in but because it is part of the security contract the above has to generate at the expected time, and arrange the payments. Q: That is the point at there was a choice you would expect to see a message, or end up still having to generate it but with the choices. A: The ones with Choices come as announcements and don't ave to be generated by the Service. Older definitin (re-scoped now: An Event in which a payment occurs. Anything can have a payment event. If a thing hits a pay date, whether it's voluntary or mandatory, that's a payment event. Divide into: Securities Cash Combination Payment or Distribution? Are these exclusive? Take an event that's always a combination of options, and an option is a combination of payouts. Generates transactions - determine what txns happen when a customer chooses that option. Distribution / delivery: generic concept Payment - implis cash distribution. So payment is specialization of distribution."@en ;
+	.
+
+fibo-cae-ce-srca:InterestPaymentInKind
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:InterestPaymentAction ;
+	rdfs:label "interest payment in kind"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Interest payment, in any kind except cash, distributed to holders of an interest bearing asset. SWIFT = PINK"@en ;
+	.
+
+fibo-cae-ce-srca:InterestPaymentWithPrincipal
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:InterestPaymentAction ;
+	rdfs:label "interest payment with principal"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "A payment of a portion of the principal of an interest bearing asset, in addition to the interest payment. SWIFT = PRII"@en ;
+	.
+
+fibo-cae-ce-srca:InterestRateAdjustment
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:MandatoryCorporateAction ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom fibo-sec-dbt-bnd:VariableCouponBond ;
+		]
+		;
+	rdfs:label "interest rate adjustment"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Scheduled change to the coupon rate for a floating or adjustable rate security."@en ;
+	fibo-fnd-utl-av:explanatoryNote "The SWIFT definition as given defines the notification of the interest rate change, not the adjustment. Adjusted to describe the event. REVIEW: Is this really an action? Usually consider that it's expected. Given definition was for the announcement. SWIFT full definition \"Announcement of the current coupon rate for a floating or adjustable rate security.\""@en ;
+	.
+
+fibo-cae-ce-srca:IntermediateSecuritiesDistribution
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "intermediate securities distribution"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving the distribution of intermediate securities or privilege that gives the holder the right to take part in a future event"@en ;
+	fibo-fnd-utl-av:synonym "rights distribution"@en ;
+	.
+
+fibo-cae-ce-srca:LIQU
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "LIQU"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions consisting of distribution of cash, assets, or both"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:LiquidationAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:LiquidationAction ;
+	lcc-lr:hasTag "LIQU" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:LiquidationAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "liquidation action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action consisting of distribution of cash, assets, or both"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Debt may be paid in order of priority based on preferred claims to assets specified by the security."@en ;
+	fibo-fnd-utl-av:synonym
+		"liquidation dividend"@en ,
+		"liquidation payment"@en
+		;
+	.
+
+fibo-cae-ce-srca:ListingStatusDelistingMessage
+	a owl:Class ;
+	rdfs:subClassOf fibo-fnd-arr-doc:Notice ;
+	rdfs:label "listing status delisting message"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Security is no longer able to comply with the listing requirements of a stock exchange and is removed from official board quotation."@en ;
+	.
+
+fibo-cae-ce-srca:MCAL
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "MCAL"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve redemption of an entire issue outstanding of securities prior to maturity"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:FullCallEarlyRedemptionAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:FullCallEarlyRedemptionAction ;
+	lcc-lr:hasTag "MCAL" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:MRGR
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "MRGR"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve the exchange of outstanding securities, initiated by the issuer which may include options, as the result of two or more companies combining assets, that is, an external, third party company"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:PostMergerSecuritiesExchange ;
+	lcc-lr:denotes fibo-cae-ce-srca:PostMergerSecuritiesExchange ;
+	lcc-lr:hasTag "MRGR" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:MandatoryCorporateAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "mandatory corporate action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "event initiated by the board of directors of the corporation that affects all shareholders"@en ;
+	skos:example "Examples of mandatory corporate actions include cash dividends, stock splits, mergers, pre-refunding, return of capital, bonus issue, asset ID change, and spin-offs."@en ;
+	fibo-fnd-utl-av:explanatoryNote "Mandatory means mandatory participation by all shareholders, however the shareholder is not required to do anything.  Shareholders are passive beneficiaries of mandatory actions."@en ;
+	.
+
+fibo-cae-ce-srca:MandatoryWithChoiceCorporateAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "mandatory with choice corporate action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "mandatory corporate action where shareholders are given an opportunity to choose among several options"@en ;
+	fibo-fnd-utl-av:explanatoryNote "In case a shareholder does not submit the election, the default option will be applied."@en ;
+	.
+
+fibo-cae-ce-srca:MaturityExtension
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:CorporateAction ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom fibo-sec-eq-eq:Share ;
+		]
+		;
+	rdfs:label "maturity extension"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that, as stipulated in a bond's terms and conditions, the issuer or the bondholder may prolong the maturity date of a bond"@en ;
+	fibo-fnd-utl-av:explanatoryNote "After extension, the security may differ from original issue (new rate or maturity date). May be subject to bondholder's approval. May be mandatory or voluntary, depending on who initiates it and the surrounding circumstances."@en ;
+	.
+
+fibo-cae-ce-srca:NotificationEvent
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "notification event"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "A notification to the shareholders that therre is a corporate action out there. This is distinct from the CA itself. not the same as Event Announcement. There are steps between when the announcement happens and the rest Announcement: at the level of sub custodians. then you gether the people who are affected by the event that's to come. Then you send the announcement - a notification to the holder, informing them of the options that are available to them. If it's mandatory these distinctions still happen, but there is no choice. So still announcement is made, then when it effects people you send out notificaiton and collect responses. \"EVENT\": two aspects: The event itself Events within the Corporat eAction, e.g. notification, deadline when a responses is due by, payment dates, Define as: lifecycle of the Corporate Action. Sometimes have to re-notify, there may be changes in the life oc the \"Corporate Event\". So the Corporate Event is a sequence of events."@en ;
+	.
+
+fibo-cae-ce-srca:OddLotOffer
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "odd lot offer"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Offer by issuer to allow holders of an odd lot of a security to order a commission-free transaction at market price, to sell the odd lot, or to buy an amount of shares which will bring the position to a round lot (board lot). SWIFT = ODLT"@en ;
+	.
+
+fibo-cae-ce-srca:OrganizationNameChange
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateInformationAction ;
+	rdfs:label "organization name change"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "The issuing company changes it's name. Event shows the change from old name to new name and may involve surrendering physical shares with the old name to the registrar. SWIFT = NAME"@en ;
+	.
+
+fibo-cae-ce-srca:PARI
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "PARI"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that occur when securities with different characteristics become identical in all respects"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:PariPassuAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:PariPassuAction ;
+	lcc-lr:hasTag "PARI" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:PCAL
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "PCAL"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve redemption of securities in part before their scheduled final maturity date with reduction of the nominal value of the securities"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:PartialRedemptionWithReductionOfNominalValueAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:PartialRedemptionWithReductionOfNominalValueAction ;
+	lcc-lr:hasTag "PCAL" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:PRED
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "PRED"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve redemption of securities in part before their scheduled final maturity date with no reduction in nominal value"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:PartialRedemptionWithoutReductionOfNominalValueAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:PartialRedemptionWithoutReductionOfNominalValueAction ;
+	lcc-lr:hasTag "PRED" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:PRIO
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "PRIO"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve a public offer where priority is given to existing shareholders"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:PriorityIssue ;
+	lcc-lr:denotes fibo-cae-ce-srca:PriorityIssue ;
+	lcc-lr:hasTag "PRIO" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:PariPassuAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "pari-passu action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that occurs when securities with different characteristics become identical in all respects"@en ;
+	fibo-fnd-utl-av:explanatoryNote
+		"A pari-passu event includes cases, for example, when shares with different entitlements to dividend or voting rights become equivalent through assimilation or pari-passu. Such an event may be scheduled in advance, for example, when shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, for example, merger, reorganisation, issue of supplementary tranches, etc."@en ,
+		"The term, pari-passu, means 'at the same rate or on an equal footing', and in finance is used to describe situations where two or more assets, securities, creditors, or obligations are equally managed without preference. An example of pari-passu occurs during bankruptcy proceedings: When the court reaches a verdict, the court regards all creditors equally, and the trustee will repay them the same fractional amount as other creditors and at the same time."@en
+		;
+	fibo-fnd-utl-av:synonym "assimilation"@en ;
+	.
+
+fibo-cae-ce-srca:PartialDefeasanceAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "partial defeasance action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "The setting aside by a borrower of cash or bonds sufficient to service the borrower's debt."@en ;
+	fibo-fnd-utl-av:explanatoryNote "From Free dictionary: Both the borrower's debt and the offsetting cash or bonds are removed from the balance sheet. In securities trading, where a clearing house becomes counterparty to each side of a trade, after the trade has been agreed. This is necessary to facilitate netting, and reduce counterparty risk exposure. The term has become popular recently, because of the growth of central counterparty clearing services in European cash equities markets. Origin: http://financial-dictionary.thefreedictionary.com/defeasance SWIFT: Term:PDEF; \"Partial Defeasance/Prefunding\" Definition:\"Issuer has money set aside to redeem a portion of an issue and the indenture states that the securities could be called earlier than the stated maturity.\""@en ;
+	.
+
+fibo-cae-ce-srca:PartialRedemptionWithReductionOfNominalValueAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "partial redemption with reduction of nominal value action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves redemption of securities in part before their scheduled final maturity date with reduction of the nominal value of the securities"@en ;
+	fibo-fnd-utl-av:explanatoryNote "The outstanding amount of securities will be reduced proportionally. May be mandatory or voluntary."@en ;
+	.
+
+fibo-cae-ce-srca:PartialRedemptionWithoutReductionOfNominalValueAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "partial redemption without reduction of nominal value action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves redemption of securities in part before their scheduled final maturity date with no reduction in nominal value"@en ;
+	fibo-fnd-utl-av:explanatoryNote "This is commonly done by pool factor reduction. May be mandatory or voluntary."@en ;
+	.
+
+fibo-cae-ce-srca:PlaceOfIncorporationChange
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateInformationAction ;
+	rdfs:label "place of incorporation change"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Changes in the state of incorporation for US companies and changes in the place of incorporation for foreign companies. Where shares need to be registered following the incorporation change, the holder(s) may have to elect the registrar. SWIFT = PLAC"@en ;
+	.
+
+fibo-cae-ce-srca:PostMergerSecuritiesExchange
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:CorporateAction ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-acc-cur:hasMonetaryAmount ;
+			owl:onClass fibo-fnd-acc-cur:MonetaryAmount ;
+			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-cae-ce-srca:convertsFrom ;
+			owl:someValuesFrom fibo-fbc-fi-fi:Security ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-cae-ce-srca:convertsTo ;
+			owl:someValuesFrom fibo-fbc-fi-fi:Security ;
+		]
+		;
+	rdfs:label "post-merger securities exchange"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves the exchange of outstanding securities, initiated by the issuer which may include options, as the result of two or more companies combining assets, that is, an external, third party company"@en ;
+	fibo-fnd-utl-av:explanatoryNote "This is an action as a result of the merger, not the merger itself, and may be mandatory or voluntary. Cash payments may accompany share exchange."@en ;
+	.
+
+fibo-cae-ce-srca:PriorityIssue
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "priority issue"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that is a public offer where, due to a limited amount of securities available, priority is given to existing shareholders"@en ;
+	.
+
+fibo-cae-ce-srca:PutRedemptionAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "put redemption action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving early redemption of a security at the election of the holder subject to the terms and condition of the issue with no reduction in nominal value"@en ;
+	.
+
+fibo-cae-ce-srca:REDM
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "REDM"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve redemption of an entire issue outstanding of securities at final maturity"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:RedemptionAtMaturityAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:RedemptionAtMaturityAction ;
+	lcc-lr:hasTag "REDM" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:REDO
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "REDO"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions by which the unit (currency and/or nominal) of a security is restated"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:RedenominationAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:RedenominationAction ;
+	lcc-lr:hasTag "REDO" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:RHDI
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "RHDI"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions involving the distribution of intermediate securities or privilege that gives the holder the right to take part in a future event"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:IntermediateSecuritiesDistribution ;
+	lcc-lr:denotes fibo-cae-ce-srca:IntermediateSecuritiesDistribution ;
+	lcc-lr:hasTag "RHDI" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:RedemptionAtMaturityAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "redemption at maturity action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves redemption of an entire issue outstanding of securities at final maturity"@en ;
+	.
+
+fibo-cae-ce-srca:RedenominationAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "redenomination action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action by which the unit (currency and/or nominal) of a security is restated"@en ;
+	fibo-fnd-utl-av:explanatoryNote "For example, the nominal/par value of security in a national currency is restated in another currency."@en ;
+	.
+
+fibo-cae-ce-srca:RepurchaseOffer
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:VoluntaryCorporateAction ;
+	rdfs:label "repurchase offer"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action in which an offer is made to existing shareholders by the issuing company to repurchase equity or other securities convertible into equity"@en ;
+	fibo-fnd-utl-av:explanatoryNote "The objective of the offer is to reduce the number of outstanding equities."@en ;
+	fibo-fnd-utl-av:synonym
+		"issuer bid"@en ,
+		"reverse rights"@en
+		;
+	.
+
+fibo-cae-ce-srca:ReverseStockSplit
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:MandatoryCorporateAction ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom fibo-sec-eq-eq:Share ;
+		]
+		;
+	rdfs:label "reverse stock split"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	owl:disjointWith fibo-cae-ce-srca:StockSplit ;
+	skos:definition "corporate action involving a decrease in a company's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Equity price and nominal value are increased accordingly."@en ;
+	fibo-fnd-utl-av:synonym "change in nominal value"@en ;
+	.
+
+fibo-cae-ce-srca:RightsExerciseEvent
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "rights exercise event"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Exercising the right to purchase the shares. Furhter Notes: This is an action on the part of the holder. SWIFT: Call/exercise on nil-paid securities/rights resulting from a rights distribution (RHDI) (To be used for the second event in case rights issue is dealt with in 2 events, first event being the RHDI)."@en ;
+	fibo-fnd-utl-av:explanatoryNote "There is a rights trading period overlaps with rights subscriptiuon period (you can trade the rights) Rights exercise period - expiry date. Some time after the expiry the new shares are distributed. This is the distribution."@en ;
+	.
+
+fibo-cae-ce-srca:SHPR
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "SHPR"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that pay shareholders an amount in cash issued from the shares premium reserve"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:SharesPremiumDividendAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:SharesPremiumDividendAction ;
+	lcc-lr:hasTag "SHPR" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:SOFF
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "SOFF"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve the distribution of subsidiary stock to the shareholders of the parent company without a surrender of shares"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:SpinOff ;
+	lcc-lr:denotes fibo-cae-ce-srca:SpinOff ;
+	lcc-lr:hasTag "SOFF" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:SPLF
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "SPLF"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve an increase in a corporation's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:StockSplit ;
+	lcc-lr:denotes fibo-cae-ce-srca:StockSplit ;
+	lcc-lr:hasTag "SPLF" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:SPLR
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "SPLR"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve a decrease in a company's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:ReverseStockSplit ;
+	lcc-lr:denotes fibo-cae-ce-srca:ReverseStockSplit ;
+	lcc-lr:hasTag "SPLR" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:SharesPremiumDividendAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryWithChoiceCorporateAction ;
+	rdfs:label "shares premium dividend action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that pays shareholders an amount in cash issued from the shares premium reserve"@en ;
+	fibo-fnd-utl-av:explanatoryNote "It is similar to a dividend but with different tax implications."@en ;
+	.
+
+fibo-cae-ce-srca:SpinOff
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "spin off"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving the distribution of subsidiary stock to the shareholders of the parent company without a surrender of shares"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Spin-off represents a form of divestiture usually resulting in an independent company or in an existing company. For example, demerger, distribution, unbundling."@en ;
+	.
+
+fibo-cae-ce-srca:StockDividendAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "stock dividend action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves distribution of a dividend to shareholders in the form of equities of the issuing corporation"@en ;
+	.
+
+fibo-cae-ce-srca:StockSplit
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:MandatoryCorporateAction ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom fibo-sec-eq-eq:Share ;
+		]
+		;
+	rdfs:label "stock split"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving an increase in a corporation's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Equity price and nominal value are reduced accordingly."@en ;
+	fibo-fnd-utl-av:synonym
+		"change in nominal value"@en ,
+		"subdivision"@en
+		;
+	.
+
+fibo-cae-ce-srca:TEND
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction
+		;
+	rdfs:label "TEND"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions involving information provided by the issuer having no accounting/financial impact on the holder"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:TenderOffer ;
+	lcc-lr:denotes fibo-cae-ce-srca:TenderOffer ;
+	lcc-lr:hasTag "TEND" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:TenderOffer
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-cae-ce-srca:VoluntaryCorporateAction ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:appliesTo ;
+			owl:someValuesFrom fibo-sec-eq-eq:Share ;
+		]
+		;
+	rdfs:label "tender offer"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action involving an offer made to shareholders, normally by a third party, requesting them to sell (tender) or exchange their equities"@en ;
+	fibo-fnd-utl-av:synonym
+		"acquisition"@en ,
+		"buyback"@en ,
+		"purchase offer"@en ,
+		"takeover"@en
+		;
+	.
+
+fibo-cae-ce-srca:TradingStatusActiveMessage
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:TradingStatusMessage ;
+	rdfs:label "trading status active message"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Trading in security has commenced or security has been re-activated after a supsension in trading."@en ;
+	.
+
+fibo-cae-ce-srca:TradingStatusMessage
+	a owl:Class ;
+	rdfs:subClassOf
+		fibo-fnd-arr-doc:Notice ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-arr-doc:isAbout ;
+			owl:someValuesFrom fibo-md-temx-trs:SecurityTradingStatus ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty fibo-fnd-rel-rel:refersTo ;
+			owl:someValuesFrom fibo-fbc-fi-fi:Security ;
+		]
+		;
+	rdfs:label "trading status message"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "A message about trading status."@en ;
+	fibo-fnd-utl-av:explanatoryNote "There are a number of such messages. Events v Status: See e.g. Active: this relates to one state OR two transitions (transition from pre-issuance to Trading, or from Suspended to Trading)."@en ;
+	.
+
+fibo-cae-ce-srca:TradingStatusSuspendedMessage
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:TradingStatusMessage ;
+	rdfs:label "trading status suspended message"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "Trading in the security has been suspended."@en ;
+	.
+
+fibo-cae-ce-srca:VoluntaryCorporateAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "voluntary corporate action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	owl:disjointWith fibo-cae-ce-srca:MandatoryCorporateAction ;
+	skos:definition "event in which the shareholders elect to participate and must respond in order for the issuer to process the action"@en ;
+	skos:example "An example of a voluntary corporate action is a tender offer, in which the issuer may request shareholders to tender their shares at a predetermined price."@en ;
+	fibo-fnd-utl-av:explanatoryNote "Shareholders send responses to the issuer's agents, and the issuer will send the proceeds of the action to those shareholders who elect to participate."@en ;
+	.
+
+fibo-cae-ce-srca:WRTH
+	a
+		owl:NamedIndividual ,
+		fibo-cae-ce-srca:BusinessStrategyOrientedAction ,
+		fibo-cae-ce-srca:IncomeOrientedAction
+		;
+	rdfs:label "WRTH"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "SWIFT ISO 15022 classifier for corporate actions that involve booking out of valueless securities"@en ;
+	fibo-fnd-rel-rel:isDefinedIn fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	lcc-cr:classifies fibo-cae-ce-srca:WorthlessSecurityAction ;
+	lcc-lr:denotes fibo-cae-ce-srca:WorthlessSecurityAction ;
+	lcc-lr:hasTag "WRTH" ;
+	lcc-lr:isMemberOf fibo-cae-ce-srca:ISO15022CorporateActionClassificationScheme ;
+	.
+
+fibo-cae-ce-srca:WarrantExerciseAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:CorporateAction ;
+	rdfs:label "warrant exercise action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that offers holders the option to buy (call warrant) or to sell (put warrant) a specific amount of stock, cash, or commodity, at a predetermined price, during a predetermined period of time (which usually corresponds to the life of the issue)"@en ;
+	fibo-fnd-utl-av:explanatoryNote "Note that participation by the warrant holder may be mandatory or voluntary and may involve a choice in the mandatory case."@en ;
+	.
+
+fibo-cae-ce-srca:WorthlessSecurityAction
+	a owl:Class ;
+	rdfs:subClassOf fibo-cae-ce-srca:MandatoryCorporateAction ;
+	rdfs:label "worthless security action"@en ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	skos:definition "corporate action that involves booking out of valueless securities"@en ;
+	.
+
+fibo-cae-ce-srca:convertsFrom
+	a owl:ObjectProperty ;
+	rdfs:label "converts from"@en ;
+	rdfs:domain fibo-cae-ce-srca:CorporateAction ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	rdfs:range fibo-fbc-fi-fi:Security ;
+	.
+
+fibo-cae-ce-srca:convertsTo
+	a owl:ObjectProperty ;
+	rdfs:label "converts to"@en ;
+	rdfs:domain fibo-cae-ce-srca:CorporateAction ;
+	rdfs:isDefinedBy <https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/> ;
+	rdfs:range fibo-fbc-fi-fi:Security ;
+	.
+
